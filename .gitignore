@@ -1,0 +1,36 @@
+# Python
+__pycache__
+.ipynb_checkpoints
+*.pyc
+*.egg-info
+dist
+.venv
+
+# Log
+*.log
+*.log.*
+*.json
+
+# Editor
+.idea
+*.swp
+
+
+# Other
+.DS_Store
+wandb
+output
+
+# Data
+*.pkl
+*.csv
+
+# ignore
+model
+data
+logs
+csv
+
+*.gz
+*.pt
+*.onnx
