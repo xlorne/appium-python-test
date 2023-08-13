@@ -26,13 +26,13 @@ appium
 
 appium是通过nodejs安装的服务，安装指令为
 
-```jsx
+```shell
 npm i --location=global appium
 ```
 
 安装uiautomator2的驱动
 
-```jsx
+```shell
 appium driver install uiautomator2
 ```
 
@@ -48,7 +48,7 @@ appium-inspector 是UI的界面元素提取的软件。
 
 直接在命令窗口运行如下指令：
 
-```jsx
+```shell
 appium
 ```
 
@@ -62,7 +62,7 @@ Appium Server是配置appium服务的地址信息。
 
 Desired Capabilities是手机启动时需要的参数信息。
 
-```jsx
+```json
 {
   "appium:automationName": "UiAutomator2",
   "platformName": "Android",
@@ -88,13 +88,13 @@ appium:deviceName：是设备的名称，这个名称当手机打开开发者模
 
 指令如下:
 
-```jsx
+```shell
 adb devices -l
 ```
 
 如下是指令执行的结果打印：
 
-```jsx
+```shell
 C:\Users\linqu>adb devices -l
 List of devices attached
 euqct4tgdefm8xrs       device product:ruby model:22101316C device:ruby transport_id:1
@@ -118,15 +118,16 @@ euqct4tgdefm8xrs       device product:ruby model:22101316C device:ruby transport
 
 基于python的自动化脚本代码，实现对Android手机的设置界面操作
 
-需要安装的依赖如下：
+需要安装的依赖如下：  
+Appium-Python-Client==2.11.1  
 
-```jsx
-Appium-Python-Client
+```shell
+pip install -r requirements.txt
 ```
 
 代码如下：
 
-```jsx
+```python
 import json
 import unittest
 from appium import webdriver
@@ -159,7 +160,7 @@ class TestAppium(unittest.TestCase):
         self.height = size['height']
 
     def tearDown(self) -> None:
-				# 退出
+		# 退出
         if self.driver:
             self.driver.quit()
 
@@ -208,6 +209,6 @@ if __name__ == '__main__':
 Appium也支持 Java、JS、Ruby等开发语言的自动化脚本支持。
 
 ## 参考资料
-[https://github.com/appium/appium-inspector/releases](https://github.com/appium/appium-inspector/releases)
-[Install Appium - Appium Documentation](http://appium.io/docs/en/2.0/quickstart/install/)
-[Write a Test (Python) - Appium Documentation](http://appium.io/docs/en/2.0/quickstart/test-py/)
+* [https://github.com/appium/appium-inspector/releases](https://github.com/appium/appium-inspector/releases)  
+* [Install Appium - Appium Documentation](http://appium.io/docs/en/2.0/quickstart/install/)  
+* [Write a Test (Python) - Appium Documentation](http://appium.io/docs/en/2.0/quickstart/test-py/)  
